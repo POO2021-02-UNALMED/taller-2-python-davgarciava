@@ -30,8 +30,9 @@ class Auto:
         if self.motor.registro != self.registro:
             return "Las piezas no son originales"
         for e in self.asientos:
-            if e.registro != self.registro:
-                return "Las piezas no son originales"
+            if type(e) == Asiento:
+                if e.registro != self.registro:
+                    return "Las piezas no son originales"
         return "Auto original"
     
 class Motor:
